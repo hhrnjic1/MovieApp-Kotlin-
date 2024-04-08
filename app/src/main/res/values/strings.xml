@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">Cinaeste</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorites</string>
+    <string name="recent">Upcoming movies</string>
+    <string name="favoritesText">My favorite movies</string>
+    <string name="recentTexts">Latest movies  playing in theaters and streaming platforms</string>
+</resources>
