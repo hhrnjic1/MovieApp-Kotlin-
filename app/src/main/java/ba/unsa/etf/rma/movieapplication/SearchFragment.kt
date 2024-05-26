@@ -48,7 +48,7 @@ class SearchFragment : Fragment() {
         toast.show()
         search(searchText.text.toString())
     }
-    fun searchDone(movies:List<Movie>){
+    fun searchDone(movies: Any?){
         val toast = Toast.makeText(context, "Search done", Toast.LENGTH_SHORT)
         toast.show()
         searchMoviesAdapter.updateMovies(movies)
@@ -66,7 +66,7 @@ class SearchFragment : Fragment() {
             val result = MovieRepository.searchRequest(query)
             // Prikaze se rezultat korisniku na glavnoj niti
             when (result) {
-                is Result.Success<List<Movie>> -> searchDone(result.data)
+                is Result.Success<*> -> searchDone(result.data)
                 else-> onError()
             }
         }
