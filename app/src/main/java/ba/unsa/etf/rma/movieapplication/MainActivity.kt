@@ -3,9 +3,11 @@ package ba.unsa.etf.rma.movieapplication
 import android.content.BroadcastReceiver
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private val br: BroadcastReceiver = ConnectivityBroadcastReceiver()
     private val filter = IntentFilter("android.net.conn.CONNECTIVITY_CHANGE")
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +35,11 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(R.id.searchFragment,bundle)
             }
         }
+        Intent(this, LatestMovieService::class.java).also {
+            startForegroundService(it)
+            return
+        }
+
     }
     override fun onResume() {
         super.onResume()
