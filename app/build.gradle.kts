@@ -56,4 +56,12 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit-ktx:+")
     testImplementation("org.hamcrest:hamcrest:x.y")
     androidTestImplementation("androidx.test.espresso:espresso-intents:+")
+
+    androidTestImplementation ("androidx.test.ext:junit-ktx:1.1.5")
+    testImplementation("org.hamcrest:hamcrest:2.2")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation ("androidx.test:core-ktx:1.5.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:+")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
 }

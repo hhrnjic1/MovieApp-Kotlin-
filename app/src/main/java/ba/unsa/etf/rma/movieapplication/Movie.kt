@@ -1,10 +1,15 @@
 package ba.unsa.etf.rma.movieapplication
 
-data class Movie(
-    val id: Long,
-    val title: String,
-    val overview: String,
-    val releaseDate: String,
-    val homepage: String,
-    val genre: String
+
+
+data class Movie (
+    var id: Long,
+    var title: String,
+    var overview: String,
+    var releaseDate: String,
+    var homepage: String?,
+    var genre: String?,
+    var posterPath: String,
+    var backdropPath: String
+
 )
